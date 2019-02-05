@@ -4,7 +4,7 @@ int main(){
 	scanf("%d",&n);
 	int count=0;
 	while(n!=1){
-		if(n%2==0){
+		if(n%2==0){//ÅÐ¶ÏÊÇ·ñÎªÅ¼Êý 
 			n=n/2;
 		}
 		else n=(3*n+1)/2;

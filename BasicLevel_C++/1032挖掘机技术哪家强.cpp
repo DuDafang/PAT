@@ -4,7 +4,7 @@ int main(){
 	int n;
 	int number,score;
 	int school[100000] ={0};//出现段错误，记得排查数组大小是否出错 
-	int k=-1;//最高分有可能为0 
+	int k=-1;//最高分有可能为0，所以要改为-1；其实也可将school【1】赋值给k 
 	int j=0;
 	scanf("%d",&n);
 	for(int i=0;i<n;i++){
