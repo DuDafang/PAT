@@ -6,20 +6,20 @@ int change(char c){//BÎª0£¬CÎª1£¬JÎª2£¬Ç¡ºÃÊÇÑ­»·Ïà¿ËË³Ğò£¬ÇÒ×ÖµäĞòµİÔö£¨È»ºó·è¿
 	if(c=='J') return 2;
 }
 int main(){
-	char mp={'B','c','j'} ;
+	char mp[3]={'B','C','J'};
 	int n;
 	cin>>n;
 	int timesa[3]={0},timesb[3]={0};//·Ö±ğ¼ÇÂ¼¼×ÒÒµÄÊ¤¸ºÆ½´ÎÊı£»
 	int handa[3]={0},handb[3]={0};//°´BCJË³Ğò·Ö±ğ¼ÇÂ¼¼×ÒÒ3ÖÖÊÖÊÆµÄ»ñÊ¤´ÎÊı
 	char c1,c2;
-	int ka,k2;//×ª»»Ö®ºóµÄ 
+	int k1,k2;//×ª»»Ö®ºóµÄ 
 	for(int i=0;i<n;i++){
 		cin>>c1>>c2;
 		k1=change(c1);
 		k2=change(c2);
 		if((k1+1)%3==k2){
 			timesa[0]++;
-			timesb[2]--;
+			timesb[2]++;
 			handa[k1]++; 
 		}
 		else if(k1==k2){
@@ -36,9 +36,9 @@ int main(){
 	printf("%d %d %d\n",timesb[0],timesb[1],timesb[2]);
 	int id1=0,id2=0;
 	for(int i=0;i<3;i++){
-		if(handa[i]>handa[id1]) id1=i;
+		if(handa[i]>handa[id1]) id1=i;//ÕâÑù³öÀ´¾ÍÊÇ×ÖµäĞò£¬ÒòÎªÖ®Ç°0.1.2·Ö±ğ¶ÔÓ¦bcj 
 		if(handb[i]>handb[id2]) id2=i;
 	}
-	printf("%c %c\n",mp[id1],mp[id2]);
+	printf("%c %c\n",mp[id1],mp[id2]);//×ª±ä»Øbcj 
 	return 0;
 } 
