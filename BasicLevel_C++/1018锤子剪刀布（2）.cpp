@@ -56,13 +56,20 @@ int main(){
 	printf("%d %d %d\n",a_timewin[0],a_timewin[2],a_timewin[1]);
 	printf("%d %d %d\n",b_timewin[0],b_timewin[2],b_timewin[1]);
 	int m=0,k=0;
-	for(int i=0;i<3;i++){
-		if(a[i]>m) m=i;
+	int mi=0,ki=0;//这块搞死我了，debug半天 
+	for(int j=0;j<3;j++){
+		if(a[j]>m){
+			m=a[j];
+			mi=j;//就是这里，不能直接让m=i，然后h【m】输出 
+		}
 	}
 	for(int i=0;i<3;i++){
-		if(b[i]>k) k=i;
+		if(b[i]>k){
+			k=b[i];
+			ki=i;
+		}
 	}
 	int h[3]={'B','C','J'};
-	printf("%c %c",h[m],h[k]);//本来是段错误，将%s换成%c，段错误提示消失 
+	printf("%c %c",h[mi],h[ki]);//本来是段错误，将%s换成%c，段错误提示消失 
 	return 0;
 }
