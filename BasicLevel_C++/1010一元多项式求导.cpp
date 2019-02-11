@@ -1,14 +1,14 @@
-#include<iostream>
+#include <iostream>//柳神的解法，我的方法有两个点过不 
 using namespace std;
-int main(){
-	int a,b;
-	while(cin>>a>>b){
-		if(b!=1&&b!=0)
-		printf("%d %d ",a*b,b-1);
-		if(b==1)
-		printf("%d %d",a*b,b-1);
-		if(a==0&&b==0)
-		printf("0 0");
-	}
-	return 0;
+int main() {
+    int a, b, flag = 0;
+    while (cin >> a >> b) {
+        if (b != 0) {
+            if (flag == 1) cout << " ";
+            cout << a * b << " " << b - 1;
+            flag = 1;
+        }
+    }
+    if (flag == 0) cout << "0 0";
+    return 0;
 }
