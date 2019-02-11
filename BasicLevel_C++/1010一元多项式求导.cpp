@@ -1,7 +1,7 @@
 #include <iostream>//柳神的解法，我的方法有两个点过不 
 using namespace std;
 int main() {
-    int a, b, flag = 0;//flag标记是一个好方法
+    int a, b, flag = 0;//flag标记是一个好方法，凡是需要先走一遍程序的，有可以使用这种标记 
 	//这个就是保证在b为0之前有其他次方 
 	//为什么会存在flag这个呢，因为会有一种可能，就是第一次输入是x 0，此时需要直接输出 
     while (cin >> a >> b) {
