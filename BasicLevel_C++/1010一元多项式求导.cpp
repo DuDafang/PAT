@@ -1,16 +1,15 @@
-#include <iostream>//柳神的解法，我的方法有两个点过不 
+#include<iostream>
 using namespace std;
-int main() {
-    int a, b, flag = 0;//flag标记是一个好方法，凡是需要先走一遍程序的，有可以使用这种标记 
-	//这个就是保证在b为0之前有其他次方 
-	//为什么会存在flag这个呢，因为会有一种可能，就是第一次输入是x 0，此时需要直接输出 
-    while (cin >> a >> b) {
-        if (b != 0) {
-            if (flag == 1) cout << " ";
-            cout << a * b << " " << b - 1;
-            flag = 1;
-        }
-    }
-    if (flag == 0) cout << "0 0";
-    return 0;
-}
+int main(){
+	int a,b;
+	int f=0;
+	while(cin>>a>>b){
+		if(f!=0&&b!=0)cout<<" ";
+		if(a==0)cout<<"0 0";
+		if(a!=0&&b!=0)cout<<a*b<<" "<<b-1;
+		if(f==0&&a!=0&&b==0)cout<<"0 0";
+		f=1;
+	} 
+	return 0;
+} 
+//这个写的很乱，写了很久终于搞出来了...不过还是柳神写的简练啊 
