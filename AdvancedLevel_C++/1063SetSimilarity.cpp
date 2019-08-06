@@ -1,34 +1,34 @@
 #include<cstdio>
 #include<set>
 using namespace std;
-set<int> st[51];
 int main(){
 	int n;
 	scanf("%d",&n);
-	int x;
-	for(int i=0;i<n;i++){
-		scanf("%d",&x);
-		for(int j=0;j<x;j++){
+	set<int> st[55];
+	for(int i=1;i<=n;i++){
+		int m;
+		scanf("%d",&m);
+		for(int j=0;j<m;j++){
 			int num;
-			num=scanf("%d",&num);
+			scanf("%d",&num);
 			st[i].insert(num);
 		}
 	}
-	int m;
-	int y1,y2;
-	scanf("%d",&m);
-	for(int i=0;i<m;i++){
-		scanf("%d %d",&y1,&y2);
-		int totlenum=st[y2].size();//两个变量分别表示不同元素的个数（并集，
-		//以及相同元素的个数（交集  
+	int k;
+	scanf("%d",&k);//k个查询 
+	for(int i=0;i<k;i++){
+		int x,y;
+		scanf("%d%d",&x,&y);
 		int samenum=0;
-		for(set<int>::iterator it=st[y1].begin();it!=st[y1].end();it++){
-			if(st[y2].find(*it)!=st[y2].end()){
-				totlenum++;
-			}
-			else samenum++;
+		int totalnum=st[y].size();
+		for(set<int>::iterator it=st[x].begin();it!=st[x].end();it++){
+			if(st[y].find(*it)!=st[y].end()){
+				samenum++;
+			}else totalnum++;
 		}
-		printf("%.1lf%%\n",samenum*100.0/totlenum);
+		float N=samenum*100.0/totalnum;
+		//printf("%d %d/n",samenum,totalnum);
+		printf("%.1f%%",N);
 	}
 	return 0;
 }
